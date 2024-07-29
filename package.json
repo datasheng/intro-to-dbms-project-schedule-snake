@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@daypilot/daypilot-lite-react": "^3.24.0",
+    "@headlessui/react": "^2.1.2",
+    "@headlessui/tailwindcss": "^0.2.1",
+    "@remixicon/react": "^4.2.0",
+    "@tremor/react": "^3.17.4",
     "daypilot-pro-react": "^0.0.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.10.2",

@@ -121,7 +121,8 @@ const Calendar: NextPage<CalendarProps> = ({ startDate }) => {
       try {
         var user = localStorage.getItem("userID");
         var userType = localStorage.getItem("userType");
-        console.log("user", user);
+        var profID = localStorage.getItem("profID");
+        console.log("user", profID);
         console.log("userType", userType);
 
         const studentSchedule = `/api/select?table=course&columns=course.courseID,course.courseName,course.startTime,course.endTime,GROUP_CONCAT(days.dayName) AS dayNames,professor.fullname,course.courseDesc&inner_join=course_days&on_inner=course.courseID=course_days.courseID&inner_join=days&on_inner=course_days.dayID=days.dayID&inner_join=professor&on_inner=course.profID=professor.profID&inner_join=enrollment&on_inner=course.courseID=enrollment.courseID&inner_join=student&on_inner=enrollment.studentID=student.studentID&inner_join=users&on_inner=student.userID=users.userID&condition=users.userType=${'userType'} AND users.userID=${user}&group_by=course.courseID&order_by=course.startTime`;
